@@ -1,7 +1,37 @@
 {
   "id": "df00b4c5-ec48-4747-bc83-b8282805fb87",
   "name": "Test smart item",
-  "tags": [],
-  "category": "test",
-  "parameters": []
+  "category": "structures",
+  "tags": [
+    "cube"
+  ],
+  "parameters": [
+    {
+      "id": "onOpen",
+      "label": "When opened",
+      "type": "actions"
+    },
+    {
+      "id": "onClose",
+      "label": "When closed",
+      "type": "actions"
+    }
+  ],
+  "actions": [
+    {
+      "id": "open",
+      "label": "Open",
+      "parameters": []
+    },
+    {
+      "id": "close",
+      "label": "Close",
+      "parameters": []
+    },
+    {
+      "id": "toggle",
+      "label": "Open or Close",
+      "parameters": []
+    }
+  ]
 }
