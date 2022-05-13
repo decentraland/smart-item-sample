@@ -19,18 +19,22 @@ export default class TestItem implements IScript<Props> {
         if (collider) {
             collider.addComponentOrReplace(
                 new Transform({
-                    scale: value ? new Vector3(0, 0, 0) : new Vector3(1, 1, 1)
+                    scale: value ? new Vector3(0.5, 0.5, 0.5) : new Vector3(1, 1, 1)
                 })
             )
         }
+        this.active[entity.name!] = value
     }
 
     spawn(host: Entity, props: Props, channel: IChannel) {
         const entity = new Entity(host.name + '-entity')
         entity.setParent(host)
+        entity.addComponent(new Transform())
+        entity.addComponent(new BoxShape())
 
         const collider = new Entity(entity.name! + '-collider')
         collider.setParent(entity)
+        collider.addComponent(new Transform())
         collider.addComponent(new BoxShape())
 
         this.active[entity.name!] = false
